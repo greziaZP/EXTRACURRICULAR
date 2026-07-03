@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdhereIA | Demo de IA explicable para adherencia clínica</title>
+    <meta
+      name="description"
+      content="AdhereIA muestra evidencia explicable de adherencia antes de cada consulta para ayudar a medicos y clinicas a tomar decisiones terapeuticas con mas confianza."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Inicio AdhereIA">
+        <span class="brand__mark">A</span>
+        <span>AdhereIA</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#producto">Producto</a>
+        <a href="#flujo">Flujo clínico</a>
+        <a href="#instituciones">Instituciones</a>
+        <a class="nav__cta" href="#contacto">Solicitar demo</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Preparación clínica basada en evidencia</p>
+          <h1>Ve la adherencia antes de decidir el tratamiento.</h1>
+          <p class="lead">
+            AdhereIA analiza datos clínicos, dispensación y seguimiento del paciente crónico para
+            mostrar una evaluación explicable antes de la consulta. Menos búsqueda manual. Más
+            confianza clínica.
+          </p>
+
+          <div class="hero__actions">
+            <a class="button button--primary" href="#producto">Probar la demo visual</a>
+            <a class="button button--ghost" href="#contacto">Agendar piloto</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <figure class="hero__image-card">
+            <img
+              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1100&q=82"
+              alt="Médico revisando información clínica en una tablet"
+            />
+            <figcaption>Vista preconsulta para equipos con alta carga asistencial</figcaption>
+          </figure>
+
+          <aside class="hero__snapshot" aria-label="Resumen del valor de AdhereIA">
+            <div class="snapshot__metric">
+              <span>68%</span>
+              <p>riesgo estimado de no adherencia</p>
+            </div>
+            <div class="snapshot__line"></div>
+            <div>
+              <strong>Antes de intensificar medicación</strong>
+              <p>AdhereIA muestra qué señales sugieren revisar adherencia con el paciente.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="product" id="producto" aria-labelledby="product-title">
+        <div class="section-intro">
+          <p class="eyebrow">Demo del producto</p>
+          <h2 id="product-title">Selecciona un paciente y mira cómo AdhereIA prepara la consulta.</h2>
+          <p>
+            Esta simulación muestra el flujo central del producto: priorizar pacientes, explicar el
+            riesgo y entregar una acción clínica concreta.
+          </p>
+        </div>
+
+        <div class="app-shell">
+          <aside class="patient-panel" aria-label="Pacientes priorizados">
+            <div class="panel-head">
+              <span>Agenda de hoy</span>
+              <strong>12 consultas</strong>
+            </div>
+            <div class="patient-list" id="patientList"></div>
+          </aside>
+
+          <section class="clinical-board" aria-live="polite">
+            <div class="board-header">
+              <div>
+                <p class="label">Paciente seleccionado</p>
+                <h3 id="patientName"></h3>
+                <p id="patientContext"></p>
+              </div>
+              <div class="risk-card" id="riskCard">
+                <span id="riskLabel"></span>
+                <strong id="riskScore"></strong>
+              </div>
+            </div>
+
+            <div class="board-grid">
+              <article class="module module--wide">
+                <div class="module__head">
+                  <h4>Explicación de riesgo</h4>
+                  <span id="confidenceLabel"></span>
+                </div>
+                <div class="evidence-list" id="evidenceList"></div>
+              </article>
+
+              <article class="module">
+                <div class="module__head">
+                  <h4>Fuentes revisadas</h4>
+                </div>
+                <div class="source-grid" id="sourceGrid"></div>
+              </article>
+
+              <article class="module">
+                <div class="module__head">
+                  <h4>Últimos 90 días</h4>
+                </div>
+                <div class="timeline" id="timeline"></div>
+              </article>
+
+              <article class="module module--wide action-module">
+                <div>
+                  <p class="label">Acción sugerida</p>
+                  <h4 id="suggestedAction"></h4>
+                  <p id="actionReason"></p>
+                </div>
+                <button class="button button--primary" id="copySummary" type="button">
+                  Copiar resumen para HCE
+                </button>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="workflow" id="flujo">
+        <div class="section-intro">
+          <p class="eyebrow">Flujo clínico</p>
+          <h2>De datos dispersos a una decisión conversable.</h2>
+        </div>
+        <div class="steps">
+          <article>
+            <span>01</span>
+            <h3>Conecta información</h3>
+            <p>HCE, dispensación, controles, notas y señales de seguimiento se reúnen en una vista.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Detecta señales</h3>
+            <p>La IA identifica patrones compatibles con no adherencia o riesgo de complicación.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Explica el porqué</h3>
+            <p>Cada alerta aparece acompañada por evidencia trazable para revisar antes de decidir.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Apoya la consulta</h3>
+            <p>El médico llega con un resumen accionable para conversar y evitar intensificaciones innecesarias.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="institutions" id="instituciones">
+        <div>
+          <p class="eyebrow">Para clientes institucionales</p>
+          <h2>Hecho para clínicas crónicas, hospitales y redes asistenciales.</h2>
+          <p>
+            AdhereIA está pensado para organizaciones con pacientes crónicos complejos, médicos con
+            alta carga asistencial y equipos que necesitan decisiones más trazables antes de cada
+            consulta.
+          </p>
+          <figure class="institution-photo">
+            <img
+              src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1100&q=82"
+              alt="Equipo médico conversando en un entorno clínico"
+            />
+          </figure>
+        </div>
+
+        <div class="value-list">
+          <div>
+            <strong>Reduce revisión manual</strong>
+            <span>Resume señales importantes sin obligar al médico a reconstruir todo desde cero.</span>
+          </div>
+          <div>
+            <strong>Evita cajas negras</strong>
+            <span>Presenta evidencia y explicación clínica, no solo una alerta aislada.</span>
+          </div>
+          <div>
+            <strong>Se integra al proceso</strong>
+            <span>Diseñado como preparación preconsulta para equipos que ya usan HCE.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contacto">
+        <div>
+          <p class="eyebrow">Piloto privado</p>
+          <h2>Conversemos si tu institución atiende pacientes crónicos complejos.</h2>
+          <p>
+            El objetivo del piloto es validar la preparación preconsulta, la utilidad de las
+            explicaciones y el impacto en decisiones terapéuticas.
+          </p>
+        </div>
+
+        <form class="contact-form" novalidate>
+          <label>
+            Nombre
+            <input type="text" name="name" placeholder="Dra. Ana Torres" required />
+          </label>
+          <label>
+            Correo institucional
+            <input type="email" name="email" placeholder="ana@clinica.com" required />
+          </label>
+          <label>
+            Institución
+            <input type="text" name="organization" placeholder="Clínica, hospital o red" required />
+          </label>
+          <button class="button button--primary" type="submit">Solicitar piloto</button>
+          <p class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>AdhereIA</span>
+      <p>IA explicable para preparar consultas de pacientes crónicos.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

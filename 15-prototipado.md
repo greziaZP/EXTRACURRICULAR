@@ -1,0 +1,2 @@
+Crea una carpeta nueva y dentro un archivo html, un css y un js para crear un home page de mi startup llamada [[AdhereIA]], deseo tener una página web de mi startup.
+Si deseas información de mi startup para que conozcas de mi negocio y crees el mejor diseño la puedas encontrar en [[@opportunity.md]] , no es una página para presentar mi modelo de negocio sino para lanzar mi startup a mis potenciales clientes.
