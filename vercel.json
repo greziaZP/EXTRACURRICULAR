@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/adhereia-home/index.html"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/adhereia-home/:path*"
+    }
+  ]
+}
