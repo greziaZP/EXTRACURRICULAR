@@ -127,6 +127,7 @@ const patients = [
   },
 ];
 
+
 const selectors = {
   patientList: document.querySelector("#patientList"),
   patientName: document.querySelector("#patientName"),
